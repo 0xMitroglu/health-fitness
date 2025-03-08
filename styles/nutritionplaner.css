@@ -1,0 +1,1331 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/*  || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 20px;
+}
+
+/* --------Variables---------- */
+:root {
+    --BODY-FF: 'Lexend', sans-serif;
+    --BLUE: #2696E9;
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+/* || GENERAL STYLING */
+.body {
+    background: white;
+    font-family: 'Lexend', sans-serif;
+    position: relative;
+    min-height: calc(100vh);
+    color: white
+}
+
+/* || */
+.nutritionPlaner__page {
+    display: flex;
+    top: 20vh;
+    color: black;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nutritionPlaner__page__row {
+    padding: 4vh 2vw;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    max-width: 1400px;
+}
+
+.nutritionPlaner__page__daily,
+.nutritionPlaner__page__daily__results {
+    flex-basis: 48%;
+    max-width: 600px;
+}
+
+.nutritionPlaner__page__daily__week {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    position: relative;
+    max-width: 48vw;
+
+
+}
+
+.nutritionPlaner__page__daily__week .fa {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transition: 0.3s;
+
+}
+
+.nutritionPlaner__page__daily__week .chevronLeft {
+    position: absolute;
+    left: -17px;
+    height: 100%;
+}
+
+.nutritionPlaner__page__daily__week .chevronLeft:hover {
+    left: -20px;
+}
+
+.nutritionPlaner__page__daily__week .chevronRight {
+    position: absolute;
+    right: -17px;
+    height: 100%;
+}
+
+.nutritionPlaner__page__daily__week .chevronRight:hover {
+    right: -20px;
+}
+
+.nutritionPlaner__page__daily__week h3 {
+    font-size: 19px;
+}
+
+.nutritionPlaner__page__daily__week p {
+    font-size: 16px;
+}
+
+.nutritionPlaner__page__daily__week__day {
+    width: 12%;
+    max-width: 60px;
+    border-radius: 12px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2%;
+    background-color: rgba(215, 215, 215, 0.5);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.nutritionPlaner__page__daily__week__this {
+    background-color: rgba(196, 52, 58, 0.9);
+}
+
+.nutritionPlaner__page__daily__week__return {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-size: 12px !important;
+    cursor: pointer;
+    height: 10px;
+}
+
+.nutritionPlaner__page__daily__select {
+    margin-top: 40px;
+    display: flex;
+    margin-left: 20px;
+}
+
+.nutritionPlaner__page__daily__select select {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(215, 215, 215, 0.5);
+    width: 200px;
+    padding-left: 15px;
+    font-size: 19px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    padding: 10px 15px;
+}
+
+.nutritionPlaner__page__daily__select button {
+    font-size: 19px;
+    background-color: rgba(215, 215, 215, 0.5);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 200px;
+    margin-left: 50px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nutritionPlaner__page__daily__foods {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    max-height: 250px;
+    overflow-y: auto;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.nutritionPlaner__page__daily__food {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+    border-radius: 20px;
+    border: 2px solid gray;
+    min-height: 100px;
+    position: relative;
+}
+
+.nutritionPlaner__page__daily__food img {
+    min-width: 75px;
+    min-height: 75px;
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    /*   border: 2px solid gray; */
+}
+
+.nutritionPlaner__page__daily__food__info {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70px;
+    width: 40%;
+    min-width: 40%;
+}
+
+.nutritionPlaner__page__daily__food__info div {
+    display: flex;
+    align-items: center;
+}
+
+.nutritionPlaner__page__daily__food__info h1 {
+    font-size: 27px;
+    font-weight: 600;
+    min-width: 150px;
+    white-space: nowrap;
+    /* Prevent the text from wrapping */
+    overflow: hidden;
+    /* Hide any overflowing content */
+    text-overflow: ellipsis;
+    /* Display an ellipsis (...) at the end */
+}
+
+.nutritionPlaner__page__daily__food__info img {
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.nutritionPlaner__page__daily__food__info p {
+    font-weight: 300;
+    margin-left: 2px;
+}
+
+.nutritionPlaner__page__daily__food__details {
+    height: 70px;
+    padding-top: 20px;
+    margin-left: 2%;
+    display: flex;
+    width: stretch;
+    justify-content: space-around;
+}
+
+.nutritionPlaner__page__daily__food__details__protein,
+.nutritionPlaner__page__daily__food__details__carb,
+.nutritionPlaner__page__daily__food__details__fat {
+    display: flex;
+    align-items: center;
+
+}
+
+.nutritionPlaner__page__daily__food__details__protein,
+.nutritionPlaner__page__daily__food__details__carb {
+    /*  margin-right: 2vw; */
+}
+
+.nutritionPlaner__page__daily__food__details h2 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 0.5vw;
+}
+
+.nutritionPlaner__page__daily__food__details p {
+    font-weight: 300;
+    font-size: 10px;
+    margin-left: 0.5vw;
+}
+
+.nutritionPlaner__page__daily__food__details__bar {
+    width: 7px;
+    height: 50px;
+    background: rgba(196, 52, 58, 0.3);
+    position: relative;
+}
+
+.nutritionPlaner__page__daily__food__details__value {
+    width: 7px;
+    bottom: 0;
+    height: 20px;
+    position: absolute;
+    background-color: rgba(196, 52, 58, 1);
+}
+
+.nutritionPlaner__page__daily__food__details__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.nutritionPlaner__page__daily__food {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.nutritionPlaner__page__daily__food__points {
+    /* background-color: rgba(214, 214, 214, 0.502); */
+    background-color: #eaeaea;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nutritionPlaner__page__daily__food__point {
+    width: 5px;
+    height: 5px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.nutritionPlaner__page__daily__food__point:nth-child(1) {
+    margin-right: 3px;
+}
+
+.nutritionPlaner__page__daily__food__point:nth-child(2) {
+    margin-right: 3px;
+}
+
+
+.nutritionPlaner__page__daily__food__edit {
+    height: 75px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 2%;
+    display: flex;
+    width: stretch;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5%;
+    padding-right: 22px;
+}
+
+.nutritionPlaner__page__daily__food__edit button {
+    width: 110px;
+    height: fit-content;
+    margin: 0;
+    font-size: 15px;
+    padding: 0.3em 0;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(196, 52, 58, 1);
+    color: rgba(196, 52, 58, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    gap: 4%;
+}
+
+.nutritionPlaner__page__daily__food__edit button:hover {
+    background: rgba(196, 52, 58, 1);
+    color: white;
+    transition: 0.4s;
+}
+
+.nutritionPlaner__page__daily__food__edit button .fa {
+    width: 12px;
+    height: 12px;
+}
+
+.nutritionPlaner__page__daily__results__buttons {
+    margin-top: 20px;
+    background-color: rgba(215, 215, 215, 0.5);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 25px;
+    position: relative;
+    height: 54px;
+    width: 310px;
+
+}
+
+.nutritionPlaner__page__daily__results__buttons button {
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 150px;
+    font-size: 19px;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: left;
+    border-radius: 25px;
+    padding-left: 10px;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+}
+
+.nutritionPlaner__page__daily__results__buttons button:nth-child(2) {
+    left: 155px;
+}
+
+.nutritionPlaner__page__daily__results__button__layer {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 44px;
+    padding: 10px 0;
+    border-radius: 25px;
+    padding-left: 10px;
+    background-color: white;
+    top: 5px;
+    transition: 0.4s;
+    left: 5px;
+}
+
+
+.nutritionPlaner__page__daily__results__button__info {
+    position: absolute;
+    left: 320px;
+    top: 0px;
+    width: 25px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nutritionPlaner__page__daily__results__button__info img {
+    width: 25px;
+    height: 25px;
+}
+
+.nutritionPlaner__page__daily__results__button__info__box {
+    position: absolute;
+    left: 35px;
+    width: 13vw;
+    height: 100px;
+    z-index: 10;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(215, 215, 215, 1);
+    border-radius: 15px;
+}
+
+.nutritionPlaner__page__daily__results__button__info__box p {
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+#connected {
+    font-weight: 600;
+    color: rgb(20, 219, 20);
+}
+
+#edit {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+#notConnected {
+    color: rgba(196, 52, 58, 1);
+    font-weight: 600;
+}
+
+.nutritionPlaner__page__daily__results__calories {
+    margin-top: 30px;
+}
+
+.nutritionPlaner__page__daily__results__calories__underline {
+    color: rgba(196, 52, 58, 1);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+}
+
+
+
+.nutritionPlaner__page__daily__results__calories__bar {
+    position: relative;
+    margin-top: 10px;
+    height: 12px;
+    width: 100%;
+    display: flex;
+    background-color: rgba(196, 52, 58, 0.3);
+    max-width: 600px;
+
+}
+
+.nutritionPlaner__page__daily__results__calories__value {
+    position: absolute;
+    height: 12px;
+    top: 0;
+    left: 0;
+    background-color: rgba(196, 52, 58, 1);
+    max-width: 600px;
+}
+
+#calories__indicator {
+    position: absolute;
+    right: 0px;
+    top: 17px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#calories__eaten {
+    position: absolute;
+    left: 0;
+    top: 17px;
+    font-size: 14px;
+    color: rgba(196, 52, 58, 1);
+    font-weight: 700;
+}
+
+.nutritionPlaner__page__daily__results__info {
+    margin-top: 69px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+
+}
+
+.nutritionPlaner__page__daily__results__info__proteins,
+.nutritionPlaner__page__daily__results__info__fat,
+.nutritionPlaner__page__daily__results__info__carbs {
+    position: relative;
+    min-width: 120px;
+    min-height: 120px;
+    width: 15vw;
+    height: 15vw;
+    max-width: 175px;
+    max-height: 175px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(rgba(196, 52, 58, 1) 300deg, rgba(196, 52, 58, 0.3) 0deg);
+    box-shadow: 0 0 5px black;
+    margin-bottom: 30px;
+}
+
+.nutritionPlaner__page__daily__results__info__text {
+    position: absolute;
+    min-width: 110px;
+    min-height: 110px;
+    width: 13vw;
+    height: 13vw;
+    max-width: 148px;
+    max-height: 148px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nutritionPlaner__page__daily__results__info__text h3 {
+    font-size: 35px;
+    color: rgba(196, 52, 58, 1);
+}
+
+.nutritionPlaner__page__daily__results__info__text p {
+    font-size: 17px;
+    margin-top: 2px;
+    font-weight: 300;
+    color: rgba(196, 52, 58, 1);
+}
+
+.nutritionPlaner__page__daily__results__info__amount {
+    position: absolute;
+    top: 107%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.nutritionPlaner__page__daily__results__info__amount h5 {
+    font-size: 19px;
+}
+
+.nutritionPlaner__page__daily__results__info__amount p {
+    font-size: 16px;
+    margin-top: 4px;
+    font-weight: 300;
+}
+
+/* -------------MOBILE---------------- */
+.nutritionPlaner__page__mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .nutritionPlaner__page__mobile {
+        display: flex;
+        top: 14vh;
+        color: black;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .nutritionPlaner__page {
+        display: none;
+    }
+}
+
+.nutritionPlaner__page__mobile__home__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.nutritionPlaner__page__mobile__row {
+    padding: 5vh 20px;
+    padding-bottom: 5vh;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
+
+
+.nutritionPlaner__page__mobile__row h1 {
+    font-size: 35px;
+}
+
+.nutritionPlaner__page__mobile__daily {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nutritionPlaner__page__mobile__daily__week {
+    display: flex;
+    margin-top: 30px;
+    gap: 5%;
+    position: relative;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.nutritionPlaner__page__mobile__daily__week .fa {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    transition: 0.3s;
+    color: black !important;
+
+}
+
+.nutritionPlaner__page__mobile__daily__week .chevronLeft {
+    position: absolute;
+    left: -27px;
+    height: 100%;
+}
+
+.nutritionPlaner__page__mobile__daily__week .chevronLeft:hover {
+    left: -29px;
+}
+
+.nutritionPlaner__page__mobile__daily__week .chevronRight {
+    position: absolute;
+    right: -27px;
+    height: 100%;
+}
+
+.nutritionPlaner__page__mobile__daily__week .chevronRight:hover {
+    right: -29px;
+}
+
+.nutritionPlaner__page__mobile__daily__week h3 {
+    font-size: 19px;
+}
+
+.nutritionPlaner__page__mobile__daily__week p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.nutritionPlaner__page__mobile__daily__week__day {
+    margin-bottom: 10px;
+    width: 60px;
+    border-radius: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2%;
+    background-color: rgba(215, 215, 215, 0.5);
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.nutritionPlaner__page__mobile__daily__day {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nutritionPlaner__page__mobile__daily__week__this {
+    background-color: rgba(196, 52, 58, 0.9);
+    color: white;
+    position: relative;
+}
+
+/* .nutritionPlaner__page__mobile__daily__week__return {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    font-size: 12px !important;
+    cursor: pointer;
+    height: 10px;
+    display: none;
+} */
+.nutritionPlaner__page__mobile__daily__results__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__button button {
+    width: 200px;
+    font-size: 19px;
+    background-color: rgba(196, 52, 58, 0.9);
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.3em 0;
+    border-radius: 20px;
+
+}
+
+.nutritionPlaner__page__mobile__daily__select {
+    display: flex;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nutritionPlaner__page__mobile__daily__select select {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(215, 215, 215, 0.5);
+    width: 200px;
+    padding-left: 15px;
+    font-size: 19px;
+    height: 45px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    padding: 10px 15px;
+    color: black;
+}
+
+.nutritionPlaner__page__mobile__daily__select button {
+    height: 45px;
+    font-size: 19px;
+    background-color: rgba(215, 215, 215, 0.5);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    width: 200px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+}
+
+.nutritionPlaner__page__mobile__daily__foods {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nutritionPlaner__page__mobile__daily__food {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    border-radius: 20px;
+    border: 2px solid gray;
+    position: relative;
+}
+
+.nutritionPlaner__page__mobile__daily__food img {
+    min-width: 75px;
+    min-height: 75px;
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    /*   border: 2px solid gray; */
+}
+
+.nutritionPlaner__page__mobile__daily__food__info {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70px;
+    width: 150px;
+    min-width: 150px;
+}
+
+.nutritionPlaner__page__mobile__daily__food__info div {
+    display: flex;
+    align-items: center;
+}
+
+.nutritionPlaner__page__mobile__daily__food__info h1 {
+    font-size: 25px;
+    font-weight: 600;
+    min-width: 150px;
+    white-space: nowrap;
+    /* Prevent the text from wrapping */
+    overflow: hidden;
+    /* Hide any overflowing content */
+    text-overflow: ellipsis;
+    /* Display an ellipsis (...) at the end */
+}
+
+.nutritionPlaner__page__mobile__daily__food__info img {
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.nutritionPlaner__page__mobile__daily__food__info p {
+    font-weight: 300;
+    margin-left: 2px;
+}
+
+.nutritionPlaner__page__mobile__daily__food__details {
+    height: 70px;
+    padding-top: 20px;
+    margin-left: 2%;
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.nutritionPlaner__page__mobile__daily__food__details__protein,
+.nutritionPlaner__page__mobile__daily__food__details__carb,
+.nutritionPlaner__page__mobile__daily__food__details__fat {
+    display: flex;
+    align-items: center;
+
+}
+
+.nutritionPlaner__page__mobile__daily__food__details__protein,
+.nutritionPlaner__page__mobile__daily__food__details__carb {
+    /*  margin-right: 2vw; */
+}
+
+.nutritionPlaner__page__mobile__daily__food__details h2 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 0.5vw;
+}
+
+.nutritionPlaner__page__mobile__daily__food__details p {
+    font-weight: 300;
+    font-size: 10px;
+    margin-left: 0.5vw;
+}
+
+.nutritionPlaner__page__mobile__daily__food__details__bar {
+    width: 7px;
+    height: 50px;
+    background: rgba(196, 52, 58, 0.3);
+    position: relative;
+}
+
+.nutritionPlaner__page__mobile__daily__food__details__value {
+    width: 7px;
+    bottom: 0;
+    height: 20px;
+    position: absolute;
+    background-color: rgba(196, 52, 58, 1);
+}
+
+.nutritionPlaner__page__mobile__daily__food__details__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.nutritionPlaner__page__mobile__daily__food {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.nutritionPlaner__page__mobile__daily__food__points {
+    /* background-color: rgba(214, 214, 214, 0.502); */
+    background-color: #eaeaea;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nutritionPlaner__page__mobile__daily__food__point {
+    width: 5px;
+    height: 5px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.nutritionPlaner__page__mobile__daily__food__point:nth-child(1) {
+    margin-right: 3px;
+}
+
+.nutritionPlaner__page__mobile__daily__food__point:nth-child(2) {
+    margin-right: 3px;
+}
+
+
+.nutritionPlaner__page__mobile__daily__food__edit {
+    height: 70px;
+    display: flex;
+    width: 200px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.nutritionPlaner__page__mobile__daily__food__edit button {
+    width: 110px;
+    height: fit-content;
+    margin: 0;
+    font-size: 15px;
+    padding: 0.3em 0;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(196, 52, 58, 1);
+    color: rgba(196, 52, 58, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    gap: 4%;
+}
+
+.nutritionPlaner__page__mobile__daily__food__edit button:hover {
+    background: rgba(196, 52, 58, 1);
+    color: white;
+    transition: 0.4s;
+}
+
+.nutritionPlaner__page__mobile__daily__food__edit button .fa {
+    width: 12px;
+    height: 12px;
+}
+
+@media screen and (max-width: 517px) {
+    .nutritionPlaner__page__mobile__daily__food__details {
+        height: 70px;
+        padding-top: 20px;
+        margin-left: 2%;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+    }
+
+    .nutritionPlaner__page__mobile__daily__food__info {
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 70px;
+        width: calc(100% - 130px);
+        min-width: calc(100% - 130px);
+    }
+
+    .nutritionPlaner__page__mobile__daily__food__edit {
+        height: 70px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+    }
+}
+
+.nutritionPlaner__page__mobile__daily__results {
+    display: flex;
+    color: black;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    display: none;
+}
+
+.nutritionPlaner__page__mobile__daily__results__buttons {
+    margin-top: 20px;
+    background-color: rgba(215, 215, 215, 0.5);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 25px;
+    position: relative;
+    height: 54px;
+    width: 310px;
+    color: black;
+
+}
+
+.nutritionPlaner__page__mobile__daily__results__buttons button {
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 150px;
+    font-size: 19px;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: left;
+    border-radius: 25px;
+    padding-left: 10px;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    color: black;
+}
+
+.nutritionPlaner__page__mobile__daily__results__buttons button:nth-child(2) {
+    left: 155px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__button__layer {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 44px;
+    padding: 10px 0;
+    border-radius: 25px;
+    padding-left: 10px;
+    background-color: white;
+    top: 5px;
+    transition: 0.4s;
+    left: 5px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__title {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+}
+
+.nutritionPlaner__page__mobile__daily__results__title .fa {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__button__info {
+    margin-left: 10px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__button__info img {
+    width: 25px;
+    height: 25px;
+    min-height: 25px;
+    min-width: 25px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__button__info__box {
+    position: absolute;
+    right: -160px;
+    width: 150px;
+    height: 100px;
+    top: -25px;
+    z-index: 999;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(215, 215, 215, 1);
+    background-color: white;
+    border-radius: 15px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__button__info__box p {
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+#connected {
+    font-weight: 600;
+    color: rgb(20, 219, 20);
+}
+
+#edit {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+#notConnected {
+    color: rgba(196, 52, 58, 1);
+    font-weight: 600;
+}
+
+.nutritionPlaner__page__mobile__daily__results__calories {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nutritionPlaner__page__mobile__daily__results__calories__underline {
+    color: rgba(196, 52, 58, 1);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+}
+
+
+
+.nutritionPlaner__page__mobile__daily__results__calories__bar {
+    position: relative;
+    margin-top: 10px;
+    height: 12px;
+    width: 100%;
+    display: flex;
+    background-color: rgba(196, 52, 58, 0.3);
+    max-width: 600px;
+
+}
+
+.nutritionPlaner__page__mobile__daily__results__calories__value {
+    position: absolute;
+    height: 12px;
+    top: 0;
+    left: 0;
+    background-color: rgba(196, 52, 58, 1);
+    max-width: 600px;
+}
+
+#calories__indicator {
+    position: absolute;
+    right: 0px;
+    top: 17px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#calories__eaten {
+    position: absolute;
+    left: 0;
+    top: 17px;
+    font-size: 14px;
+    color: rgba(196, 52, 58, 1);
+    font-weight: 700;
+}
+
+.nutritionPlaner__page__mobile__daily__results__info {
+    margin-top: 59px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+
+}
+
+@media screen and (max-width: 500px) {
+    .nutritionPlaner__page__mobile__daily__results__info {
+        margin-top: 59px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        gap: 70px;
+
+    }
+}
+
+.nutritionPlaner__page__mobile__daily__results__info__proteins,
+.nutritionPlaner__page__mobile__daily__results__info__fat,
+.nutritionPlaner__page__mobile__daily__results__info__carbs {
+    position: relative;
+    min-width: 140px;
+    min-height: 140px;
+    width: 19vw;
+    height: 19vw;
+    max-width: 175px;
+    max-height: 175px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(rgba(196, 52, 58, 1) 300deg, rgba(196, 52, 58, 0.3) 0deg);
+    box-shadow: 0 0 5px black;
+    margin-bottom: 30px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__info__text {
+    position: absolute;
+    min-width: 105px;
+    min-height: 105px;
+    width: 15vw;
+    height: 15vw;
+    max-width: 148px;
+    max-height: 148px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nutritionPlaner__page__mobile__daily__results__info__text h3 {
+    font-size: clamp(34px, 4vw, 40px);
+    color: rgba(196, 52, 58, 1);
+}
+
+.nutritionPlaner__page__mobile__daily__results__info__text p {
+    font-size: clamp(12px, 1.7vw, 15px);
+    margin-top: 2px;
+    font-weight: 400;
+    color: rgba(196, 52, 58, 1);
+}
+
+.nutritionPlaner__page__mobile__daily__results__info__amount {
+    position: absolute;
+    top: 107%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.nutritionPlaner__page__mobile__daily__results__info__amount h5 {
+    font-size: 19px;
+}
+
+.nutritionPlaner__page__mobile__daily__results__info__amount p {
+    font-size: 16px;
+    margin-top: 4px;
+    font-weight: 300;
+}

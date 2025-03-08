@@ -1,0 +1,466 @@
+.nutritionPlaner__page__planerUpload {
+    padding: 4vh 2vw;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    min-height: 500px;
+    width: 100%;
+    max-width: 1400px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    position: relative;
+    flex-direction: column;
+}
+
+.faReturnPlanerUpload {
+    position: absolute;
+    top: calc(4vh + 28px);
+    left: calc(5vw - 30px);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.faReturnPlanerUpload:hover {
+    left: calc(5vw - 35px);
+}
+
+.nutritionPlaner__page__planerUpload__box {
+    max-width: 800px;
+    width: 80%;
+    min-height: 500px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.nutritionPlaner__page__planerUpload__box__col1 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 40%;
+}
+
+.nutritionPlaner__page__planerUpload__box__image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 15px;
+    height: fit-content;
+}
+
+.nutritionPlaner__page__planerUpload__box__image img {
+    width: auto;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.nutritionPlaner__page__planerUpload__box__image h1 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.nutritionPlaner__page__planerUpload__box__info {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.nutritionPlaner__page__planerUpload__box__info__value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nutritionPlaner__page__planerUpload__box__info__value p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.nutritionPlaner__page__planerUpload__box__info__value h3 {
+    color: rgba(196, 52, 58, 0.9);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.nutritionPlaner__page__planerUpload__box__weight {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+}
+
+.nutritionPlaner__page__planerUpload__box__weight__amount select {
+
+    font-size: 19px;
+    padding: 0.3em 0.5em;
+    outline: none;
+    text-align: center;
+    border-radius: 12px;
+    border: none;
+    background: rgba(215, 215, 215, 0.5);
+    font-family: 'Lexend';
+    color: black;
+    font-weight: 400;
+}
+
+.nutritionPlaner__page__planerUpload__box__weight input {
+    background: rgba(215, 215, 215, 0.5);
+    font-family: 'Lexend';
+    font-weight: 400;
+    outline: none;
+    border-radius: 12px;
+    border: none;
+    width: 160px;
+    font-size: 19px;
+    padding: 0.3em 0.5em;
+    margin-left: 50px;
+
+}
+
+.nutritionPlaner__page__planerUpload__box__weight p {
+    position: absolute;
+    color: black;
+    font-size: 19px;
+    right: 10px;
+}
+
+
+
+.nutritionPlaner__page__planerUpload__box__select {
+    margin-top: 20px;
+}
+
+.nutritionPlaner__page__planerUpload__box__select select {
+    font-size: 19px;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border-radius: 12px;
+    border: none;
+    background: rgba(215, 215, 215, 0.5);
+    font-family: 'Lexend';
+    font-weight: 400;
+    width: 150px;
+    color: black;
+}
+
+.nutritionPlaner__page__planerUpload__box__col1 {}
+
+.nutritionPlaner__page__planerUpload__box__col2 {
+    width: calc(100% - 40% - 70px);
+    min-width: calc(100% - 40% - 70px);
+    margin-top: 180px;
+    margin-right: 20px;
+}
+
+
+.nutritionPlaner__page__planerUpload__box__col2 h2 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.nutritionPlaner__page__planerUpload__box__col2__images {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.nutritionPlaner__page__planerUpload__box__col2__images__box {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.nutritionPlaner__page__planerUpload__box__button {
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.nutritionPlaner__page__planerUpload__box__button button {
+    font-size: 19px;
+    font-weight: 600;
+    padding: 0.6em 3em;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background: rgba(196, 52, 58, 0.9);
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.nutritionPlaner__page__planerUpload__box__button button:hover {
+    opacity: 0.9;
+}
+
+/* Mobile */
+.nutritionPlaner__page__mobile__planerUpload__row {
+    padding: 5vh 20px;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__boxDiv {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.faReturnPlanerUploadMobile {
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    z-index: 10;
+    left: 0;
+    position: absolute;
+    transition: 0.2s;
+    top: 29px;
+}
+
+.faReturnPlanerUploadMobile:hover {
+    position: absolute;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    left: -5px;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box {
+    max-width: 430px;
+    width: 100%;
+    min-height: 500px;
+    border-radius: 40px;
+    padding: 20px 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__col1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 100%;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 6px;
+    height: fit-content;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__image img {
+    width: auto;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__image h1 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__info {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__info__value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__info__value p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__info__value h3 {
+    color: rgba(196, 52, 58, 0.9);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__weight {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__weight__amount {
+    display: flex;
+    width: 30%;
+    min-width: 30%;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__weight__amount select {
+
+    font-size: 19px;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border-radius: 12px;
+    border: none;
+    background: rgba(215, 215, 215, 0.5);
+    font-family: 'Lexend';
+    font-weight: 400;
+    color: black;
+    width: 100%;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__weight input {
+    background: rgba(215, 215, 215, 0.5);
+    font-family: 'Lexend';
+    font-weight: 400;
+    outline: none;
+    border-radius: 12px;
+    border: none;
+    width: 160px;
+    font-size: 19px;
+    padding: 0.3em 0.5em;
+    color: black;
+    width: 65%;
+    min-width: 65%;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__weight p {
+    position: absolute;
+    color: black;
+    font-size: 19px;
+    right: 10px;
+}
+
+
+
+.nutritionPlaner__page__mobile__planerUpload__box__select {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    /*     justify-content: center;
+    align-items: center; */
+    max-width: 300px;
+
+
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__select select {
+    font-size: 19px;
+    padding: 0.3em 0.5em;
+    outline: none;
+    border-radius: 12px;
+    border: none;
+    background: rgba(215, 215, 215, 0.5);
+    font-family: 'Lexend';
+    font-weight: 400;
+    color: black;
+    width: 100%;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__col1 {}
+
+.nutritionPlaner__page__mobile__planerUpload__box__col2 {
+    width: 100%;
+    min-width: 100%;
+    margin-top: 50px;
+}
+
+
+.nutritionPlaner__page__mobile__planerUpload__box__col2 h2 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__col2__images {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__col2__images img {
+    max-width: 60px;
+    height: auto;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__col2__images__box {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__button {
+
+    bottom: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__button button {
+    font-size: 19px;
+    font-weight: 600;
+    width: 100%;
+    padding: 0.6em 0;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background: rgba(196, 52, 58, 0.9);
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.nutritionPlaner__page__mobile__planerUpload__box__button button:hover {
+    opacity: 0.9;
+}

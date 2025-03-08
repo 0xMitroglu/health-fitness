@@ -1,0 +1,967 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/*  || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 20px;
+}
+
+/* --------Variables---------- */
+:root {
+    --BODY-FF: 'Lexend', sans-serif;
+    --BLUE: #2696E9;
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+/* || GENERAL STYLING */
+.body {
+    background: white;
+    font-family: 'Lexend', sans-serif;
+    position: relative;
+    min-height: calc(100vh);
+    color: white;
+}
+
+/* Calculator Styling */
+button {
+    outline: none;
+}
+
+.body .calculator__page {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    color: black;
+    padding: 0;
+
+}
+
+.calculator__page__rows {
+    padding: 0 4vw;
+    width: 100%;
+    display: flex;
+    color: black;
+}
+
+.calculator__mobile__rows {
+    padding: 6vh 4vw;
+}
+
+.calculator__page__col1 {
+    margin-top: 7vh;
+    flex-basis: 60%;
+    padding-right: 5vw;
+    flex-grow: 1;
+    margin-bottom: 5vh;
+}
+
+.calculator__page__col2 {
+    margin-bottom: 5vh;
+    border-radius: 5px;
+    background-color: rgba(217, 217, 217, 0.6);
+    flex-basis: 40%;
+    flex-grow: 1;
+    margin-top: 3vh;
+    padding-top: 4vh;
+}
+
+.calculator__page__col1__title h2,
+.calculator__page__col2__title h2,
+.calculator__page__col2__formula h2 {
+    font-size: clamp(10px, 2.3vw, 40px);
+    font-weight: 700;
+}
+
+.calculator__page__col2__title {
+    text-align: center;
+}
+
+
+
+.calculator__page__col1__title p {
+    font-weight: 200;
+    font-size: clamp(10px, 1.5vw, 18px);
+}
+
+.calculator__page__col1__gender,
+.calculator__page__col1__goal,
+.calculator__page__col1__age,
+.calculator__page__col1__height,
+.calculator__page__col1__weight,
+.calculator__page__col1__sport,
+.calculator__page__col1__activity,
+.calculator__page__col1__calculate {
+    margin-top: 3vh;
+    position: relative;
+
+}
+
+.calculator__page__col1__gender p,
+.calculator__page__col1__goal p,
+.calculator__page__col1__age p,
+.calculator__page__col1__height p,
+.calculator__page__col1__weight p,
+.calculator__page__col1__sport p,
+.calculator__page__col1__activity p {
+    font-weight: 300;
+    font-size: clamp(10px, 1.5vw, 18px);
+    margin-bottom: 1.5vh;
+}
+
+.calculator__page__col1__gender__buttons,
+.calculator__page__col1__goal__buttons {
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.6);
+    width: fit-content;
+    display: flex;
+    overflow: hidden;
+
+
+}
+
+
+.calculator__page__col1__gender__buttons button,
+.calculator__page__col1__goal__buttons button {
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 500;
+    width: 15vw;
+    padding: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: black;
+    z-index: 1;
+
+}
+
+.calculator__page__col1__sport select {
+    outline: none;
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 500;
+    width: fit-content;
+    padding: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: rgba(217, 217, 217, 0.6);
+}
+
+.calculator__page__col1__gender__buttons button:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+
+}
+
+.calculator__page__col1__goal__buttons button:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+}
+
+.calculator__page__col1__gender__buttons button:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
+
+.calculator__page__col1__gender__buttons button.selected,
+.calculator__page__col1__goal__layer button.selected {
+    background: none;
+    border-radius: 10px;
+}
+
+.calculator__page__col1__gender__layer,
+.calculator__page__col1__goal__layer {
+    transition: 0.5s ease;
+    width: 15vw;
+    height: 100%;
+    left: -15vw;
+    background-color: #C4343A;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.calculator__page__col1__gender__male {
+    left: 0;
+}
+
+.calculator__page__col1__gender__female {
+    left: 15vw;
+}
+
+.calculator__page__col1__goal__lose {
+    left: 0;
+}
+
+.calculator__page__col1__goal__maintain {
+    left: 15vw;
+}
+
+.calculator__page__col1__goal__gain {
+    left: 30vw;
+}
+
+.calculator__page__col1__age input,
+.calculator__page__col1__height input,
+.calculator__page__col1__weight input,
+.calculator__mobile__age input,
+.calculator__mobile__height input,
+.calculator__mobile__weight input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 10px;
+    background: #D9D9D9;
+}
+
+.calculator__page__col1__age input::-webkit-slider-thumb,
+.calculator__page__col1__height input::-webkit-slider-thumb,
+.calculator__page__col1__weight input::-webkit-slider-thumb,
+.calculator__mobile__age input::-webkit-slider-thumb,
+.calculator__mobile__height input::-webkit-slider-thumb,
+.calculator__mobile__height input::-webkit-slider-thumb,
+.calculator__mobile__weight input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+
+.calculator__page__col1__age .bold,
+.calculator__page__col1__height .bold,
+.calculator__page__col1__weight .bold {
+    font-weight: 600;
+}
+
+.calculator__page__col1__activity__buttons {
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.6);
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.calculator__page__col1__activity__button {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 34%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* 
+calculator__page__col1__activity__layer
+ */
+
+.calculator__page__col1__activity__button h3 {
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 500;
+}
+
+.calculator__page__col1__activity__button p {
+    text-align: center;
+    margin: 0;
+    font-weight: 200;
+    font-size: clamp(10px, 1.5vw, 18px);
+}
+
+.calculator__page__col1__activity__layer {
+    transition: 0.5s ease;
+    width: 33%;
+    height: 100%;
+    left: -33%;
+    background-color: #C4343A;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.calculator__page__col1__activity__sedentary {
+    left: 0;
+}
+
+.calculator__page__col1__activity__active {
+    left: 33%;
+}
+
+.calculator__page__col1__activity__sport {
+    left: 67%;
+}
+
+.calculator__page__col1__calculate button {
+    cursor: pointer;
+    font-size: clamp(17px, 1.9vw, 30px);
+    margin-top: 2vh;
+    width: 100%;
+    font-weight: 600;
+    padding: 0.3em 0;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    background-color: #C4343A;
+
+}
+
+
+/* col2 */
+.calculator__page__col2 {
+    position: relative;
+}
+
+.calculator__page__col2__calories {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator__page__col2__calories__circle {
+    padding: 2em;
+    height: 30vh;
+    width: 30vh;
+    min-width: 170px;
+    min-height: 170px;
+    max-width: 300px;
+    max-height: 300px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.calculator__page__col2__calories__info {
+    border: 2px solid black;
+    background: #e8e8e8;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.calculator__page__col2__calories__info p {
+    font-size: clamp(10px, 1vw, 18px);
+    font-weight: 200;
+}
+
+.calculator__page__col2__calories__info h1 {
+    font-size: clamp(30px, 2.7vw, 60px);
+    font-weight: 700;
+    color: black;
+}
+
+.calculator__page__col2__nutriments {
+    margin-top: 10vh;
+    padding: 0 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculator__page__col2__nutriments div {
+    flex-basis: 25%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1.5em 0;
+    border-radius: 15px;
+}
+
+.calculator__page__col2__nutriments div p {
+    font-weight: 200;
+    font-size: clamp(10px, 1vw, 25px);
+}
+
+.calculator__page__col2__nutriments div h1 {
+    font-size: clamp(18px, 2vw, 35px);
+}
+
+.calculator__page__col2__formula {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 4vh;
+}
+
+.calculator__page__col2__formula h2 {
+    text-align: center;
+}
+
+.calculator__page__col2__formula__info {
+    display: flex;
+    padding: 0 3vw;
+    margin-top: 2vh;
+}
+
+.calculator__page__col2__formula__info__image {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.calculator__page__col2__formula__info__text {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+}
+
+.calculator__page__col2__formula__info__text button {
+    font-size: clamp(13px, 1.2vw, 22px);
+    font-weight: 300;
+    padding: 0.2em 1em;
+    border-radius: 12px;
+    background: transparent;
+    border: 3px solid #C4343A;
+    color: #C4343A;
+    cursor: pointer;
+}
+
+.calculator__page__col2__formula__info__text .bold {
+    font-weight: 700;
+
+}
+
+.calculator__page__col2__formula__info__text button:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.calculator__page__col2__formula__info__image img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    width: auto;
+}
+
+.calculator__page__col2__formula__info__text p {
+    font-size: clamp(10px, 1vw, 18px);
+    font-weight: 300;
+}
+
+.calculator__mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 6vh 4vw; */
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .calculator__mobile {
+        display: block;
+
+    }
+
+    .calculator__pc {
+        display: none;
+    }
+
+
+}
+
+/* ----Mobile------ */
+.calculator__mobile .bold {
+    font-weight: 800;
+}
+
+.calculator__mobile__calculate__title h1 {
+    font-size: clamp(27px, 7vw, 35px);
+    font-weight: 700;
+
+}
+
+.calculator__mobile__result__title h2 {
+    text-align: center;
+    font-size: clamp(20px, 5.5vw, 25px);
+}
+
+.calculator__mobile__calculate__title p {
+    font-size: clamp(10px, 4.6vw, 18px);
+    font-weight: 200;
+}
+
+.calculator__mobile__gender,
+.calculator__mobile__goal,
+.calculator__mobile__age,
+.calculator__mobile__height,
+.calculator__mobile__weight,
+.calculator__mobile__sport,
+.calculator__mobile__activity,
+.calculator__mobile__calculate__button {
+    margin-top: 3.5vh;
+    position: relative;
+}
+
+.calculator__mobile__gender p,
+.calculator__mobile__goal p,
+.calculator__mobile__age p,
+.calculator__mobile__height p,
+.calculator__mobile__weight p,
+.calculator__mobile__sport p,
+.calculator__mobile__activity p {
+    font-size: clamp(10px, 4.6vw, 18px);
+    font-weight: 300;
+    margin-bottom: 1vh;
+}
+
+.calculator__mobile__gender__buttons {
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.6);
+    width: fit-content;
+    display: flex;
+    overflow: hidden;
+    width: 61vw;
+    max-width: 400px;
+}
+
+.calculator__mobile__goal__buttons {
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.6);
+    width: fit-content;
+    display: flex;
+    overflow: hidden;
+    width: 92vw;
+    max-width: 600px;
+}
+
+.calculator__mobile__gender__buttons button,
+.calculator__mobile__goal__buttons button {
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 500;
+    width: 30.5vw;
+    max-width: 200px;
+    min-width: 100px;
+    padding: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: black;
+    z-index: 1;
+}
+
+
+.calculator__page__col1__goal__buttons button:nth-child(1),
+.calculator__mobile__goal__layer button:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+}
+
+.calculator__page__col1__gender__buttons button:last-child,
+.calculator__mobile__goal__layer button:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
+
+.calculator__page__col1__gender__buttons button.selected,
+.calculator__mobile__goal__layer button.selected {
+    background: none;
+    border-radius: 10px;
+}
+
+.calculator__mobile__gender__layer,
+.calculator__mobile__goal__layer {
+    transition: 0.5s ease;
+    width: 50%;
+    max-width: 200px;
+    height: 100%;
+    left: -100%;
+    min-width: 100px;
+    background-color: #C4343A;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0;
+}
+
+.calculator__mobile__goal__layer {
+    width: 33%;
+}
+
+.calculator__mobile__gender__male {
+    left: 0%;
+    opacity: 1;
+
+}
+
+.calculator__mobile__gender__female {
+    left: 50%;
+    opacity: 1;
+}
+
+.calculator__mobile__goal__lose {
+    left: 0;
+    opacity: 1;
+}
+
+.calculator__mobile__goal__maintain {
+    left: 34%;
+    opacity: 1;
+}
+
+.calculator__mobile__goal__gain {
+    left: 66%;
+    opacity: 1;
+}
+
+.calculator__mobile__sport select {
+    outline: none;
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 500;
+    width: fit-content;
+    padding: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: rgba(217, 217, 217, 0.6);
+}
+
+.calculator__mobile__activity__button {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 34%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.calculator__mobile__activity__layer {
+    transition: 0.5s ease;
+    width: 33%;
+    height: 100%;
+    left: -33%;
+    background-color: #C4343A;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.calculator__mobile__activity__buttons {
+    position: relative;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.6);
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.calculator__mobile__activity__sedentary {
+    left: 0;
+}
+
+.calculator__mobile__activity__active {
+    left: 33%;
+}
+
+.calculator__mobile__activity__sport {
+    left: 67%;
+}
+
+.calculator__mobile__activity__button h3 {
+    font-weight: 500;
+    font-size: clamp(10px, 4.6vw, 18px);
+}
+
+.calculator__mobile__activity__button p {
+    text-align: center;
+    margin: 0;
+    font-weight: 200;
+
+    font-size: clamp(15px, 1.8vw, 20px);
+}
+
+
+
+.calculator__mobile__calculate__button button {
+    cursor: pointer;
+    font-size: clamp(15px, 6vw, 25px);
+    margin-top: 2vh;
+    width: 100%;
+    font-weight: 600;
+    padding: 0.3em 0;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    background-color: #C4343A;
+    text-align: center;
+
+}
+
+.calculator__page__button__disabled {
+    opacity: 0.7;
+}
+
+.calculator__mobile__result {
+    background: transparent;
+    position: relative;
+}
+
+.calculator__mobile__result__calories {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator__mobile__result__calories__info p {
+    font-size: clamp(10px, 4vw, 18px);
+    font-weight: 200;
+}
+
+.calculator__mobile__result__calories__info h1 {
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 700;
+}
+
+
+
+.calculator__mobile__result__calories__circle {
+    padding: 2em;
+    height: 30vh;
+    width: 30vh;
+    min-width: 170px;
+    min-height: 170px;
+    max-width: 300px;
+    max-height: 300px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.calculator__mobile__result__calories__info {
+    border: 2px solid black;
+    background: #e8e8e8;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2%;
+}
+
+
+
+.calculator__mobile__result__nutriments {
+    margin-top: 10vh;
+    padding: 0 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculator__mobile__result__nutriments div {
+    flex-basis: 25%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(217, 217, 217, 0.6);
+    padding: 1.5em 0;
+    border-radius: 15px;
+}
+
+.calculator__mobile__result__nutriments div p {
+    font-weight: 200;
+    font-size: clamp(10px, 3vw, 15px);
+}
+
+.calculator__mobile__result__nutriments div h1 {
+    font-size: clamp(20px, 4vw, 35px);
+}
+
+.calculator__mobile__result__formula {
+    margin-top: 6vh;
+}
+
+.calculator__mobile__result__formula h2 {
+    font-size: clamp(20px, 5.5vw, 25px);
+    text-align: center;
+}
+
+.calculator__mobile__result__formula__info p {
+    margin-top: 0.8em;
+    font-weight: 200;
+    line-height: 1.5em;
+    font-size: clamp(12px, 3vw, 15px);
+}
+
+.calculator__page__col2__formula__info {
+    display: flex;
+    padding: 0 3vw;
+    margin-top: 2vh;
+}
+
+.calculator__page__col2__formula__info__image {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.calculator__page__col2__formula__info__text {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+}
+
+.calculator__mobile__result__formula__info__text__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.calculator__mobile__result__formula__info__text__button button {
+    font-size: clamp(12px, 3vw, 15px);
+    font-weight: 300;
+    padding: 0.2em 1em;
+    border-radius: 12px;
+    background: transparent;
+    border: 2px solid #C4343A;
+    color: #C4343A;
+    cursor: pointer;
+}
+
+.calculator__mobile__result__formula__info__image {
+    margin-top: 1vh;
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator__mobile__result__formula__info__image img {
+    width: 25vh;
+    height: 25vh;
+}
+
+.calculator__page__col2__formula__info__text .bold {
+    font-weight: 700;
+
+}
+
+.calculator__mobile__result__formula__info__text__button button:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.calculator__mobile__result__buttons {
+    margin-top: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculator__mobile__result__buttons button {
+    flex-basis: 40%;
+    font-size: clamp(15px, 4vw, 20px);
+    border-radius: 10px;
+    padding: 0.3em;
+    border: 4px solid #C4343A;
+    background: transparent;
+    color: white;
+    background-color: #C4343A;
+    transition: 0.5s;
+}
+
+.calculator__mobile__result__buttons button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 0.5s;
+    color: white;
+}

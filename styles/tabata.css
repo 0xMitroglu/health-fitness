@@ -1,0 +1,3350 @@
+.tabata__page__PC {
+    display: none;
+    top: 20vh;
+    color: black;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__PC__row {
+    padding: 4vh 5vw;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    max-width: 1400px;
+    height: 100%;
+    position: relative;
+}
+
+.tabata__page__PC h1 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.tabata__page__PC__createTimer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabata__page__PC__createTimer__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.tabata__page__PC__createTimer__col1 {
+    height: 450px;
+    flex-basis: 45%;
+    max-width: 400px;
+    flex-direction: column;
+    display: flex;
+    gap: 25px;
+}
+
+.tabata__page__PC__createTimer__col2 {
+    height: 450px;
+    flex-basis: 45%;
+    max-width: 400px;
+    flex-direction: column;
+    display: flex;
+    gap: 25px;
+}
+
+.tabata__page__PC__createTimer__box h3 {
+    font-size: 23px;
+    font-weight: 400;
+    font-family: 'Lexend';
+    margin-bottom: 10px;
+}
+
+.tabata__page__PC__createTimer__col1__prepare input,
+.tabata__page__PC__createTimer__col1__work input,
+.tabata__page__PC__createTimer__col1__rest input,
+.tabata__page__PC__createTimer__col1__cycles input,
+.tabata__page__PC__createTimer__col1__restSets input,
+.tabata__page__PC__createTimer__col1__cooldown input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 10px;
+    background: rgba(196, 52, 57, 0.4);
+
+}
+
+.tabata__page__PC__createTimer__col1__prepare input::-webkit-slider-thumb,
+.tabata__page__PC__createTimer__col1__work input::-webkit-slider-thumb,
+.tabata__page__PC__createTimer__col1__rest input::-webkit-slider-thumb,
+.tabata__page__PC__createTimer__col1__cycles input::-webkit-slider-thumb,
+.tabata__page__PC__createTimer__col1__restSets input::-webkit-slider-thumb,
+.tabata__page__PC__createTimer__col1__cooldown input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__PC__createTimer__col1__prepare input::-moz-range-thumb,
+.tabata__page__PC__createTimer__col1__work input::-moz-range-thumb,
+.tabata__page__PC__createTimer__col1__rest input::-moz-range-thumb,
+.tabata__page__PC__createTimer__col1__cycles input::-moz-range-thumb,
+.tabata__page__PC__createTimer__col1__restSets input::-moz-range-thumb,
+.tabata__page__PC__createTimer__col1__cooldown input::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__info,
+.tabata__page__PC__createTimer__col1__work__info,
+.tabata__page__PC__createTimer__col1__rest__info,
+.tabata__page__PC__createTimer__col1__cycles__info,
+.tabata__page__PC__createTimer__col1__restSets__info,
+.tabata__page__PC__createTimer__col1__cooldown__info {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__timeSwitch,
+.tabata__page__PC__createTimer__col1__work__timeSwitch,
+.tabata__page__PC__createTimer__col1__rest__timeSwitch,
+.tabata__page__PC__createTimer__col1__restSets__timeSwitch,
+.tabata__page__PC__createTimer__col1__cooldown__timeSwitch {
+    width: 90px;
+    position: relative;
+    background: rgba(215, 215, 215, 0.5);
+    height: fit-content;
+    border-radius: 10px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__timeSwitch button,
+.tabata__page__PC__createTimer__col1__work__timeSwitch button,
+.tabata__page__PC__createTimer__col1__rest__timeSwitch button,
+.tabata__page__PC__createTimer__col1__restSets__timeSwitch button,
+.tabata__page__PC__createTimer__col1__cooldown__timeSwitch button {
+    width: 45px;
+    min-width: 45px;
+    max-width: 45px;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    height: 25px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    color: black;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__timeSwitch button:nth-child(2),
+.tabata__page__PC__createTimer__col1__work__timeSwitch button:nth-child(2),
+.tabata__page__PC__createTimer__col1__rest__timeSwitch button:nth-child(2),
+.tabata__page__PC__createTimer__col1__restSets__timeSwitch button:nth-child(2),
+.tabata__page__PC__createTimer__col1__cooldown__timeSwitch button:nth-child(2) {
+    left: 45px;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__info__layer,
+.tabata__page__PC__createTimer__col1__work__info__layer,
+.tabata__page__PC__createTimer__col1__rest__info__layer,
+.tabata__page__PC__createTimer__col1__restSets__info__layer,
+.tabata__page__PC__createTimer__col1__cooldown__info__layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45px;
+    background-color: rgb(196, 52, 58, 0.9);
+    height: 25px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__timeSwitch__selected,
+.tabata__page__PC__createTimer__col1__work__timeSwitch__selected,
+.tabata__page__PC__createTimer__col1__rest__timeSwitch__selected,
+.tabata__page__PC__createTimer__col1__restSets__timeSwitch__selected,
+.tabata__page__PC__createTimer__col1__cooldown__timeSwitch__selected {
+    color: white !important;
+    transition: 0.2s;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__value,
+.tabata__page__PC__createTimer__col1__work__value,
+.tabata__page__PC__createTimer__col1__rest__value,
+.tabata__page__PC__createTimer__col1__cycles__value,
+.tabata__page__PC__createTimer__col1__restSets__value,
+.tabata__page__PC__createTimer__col1__cooldown__value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    justify-content: space-between;
+}
+
+.tabata__page__PC__createTimer__col1__cycles__value {
+    width: 90px;
+}
+
+.tabata__page__PC__createTimer__col1__prepare__value input,
+.tabata__page__PC__createTimer__col1__work__value input,
+.tabata__page__PC__createTimer__col1__rest__value input,
+.tabata__page__PC__createTimer__col1__cycles__value input,
+.tabata__page__PC__createTimer__col1__restSets__value input,
+.tabata__page__PC__createTimer__col1__cooldown__value input {
+    width: 25px;
+    text-align: center;
+    height: 25px;
+    font-size: 16px;
+    border-radius: none;
+    outline: none;
+    border: none;
+    background: rgba(196, 52, 57, 0.9);
+    color: white;
+    font-weight: 300;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.tabata__page__PC__createTimer__col2__buttons {
+    display: flex;
+    justify-content: flex-end;
+    height: 90px;
+    align-items: flex-end;
+
+}
+
+.tabata__page__PC__createTimer__col2__buttons__box {
+    display: flex;
+    width: fit-content;
+    position: relative;
+    background-color: rgba(215, 215, 215, 0.5);
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    height: fit-content;
+}
+
+.tabata__page__PC__createTimer__col2__buttons__box button {
+    border: none;
+    outline: none;
+    padding: 0.7em 1.5em;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 300;
+    color: black;
+}
+
+
+
+#tabata__page__PC__createTimer__col2__buttons__box__continue {
+    background-color: rgba(196, 52, 57, 0.9);
+    border-radius: 7px;
+    color: white;
+}
+
+.tabata__page__PC__editTabata {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tabata__page__PC__editTabata__col1 {
+    flex-basis: 50%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.tabata__page__PC__editTabata__col2 {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabata__page__PC__editTabata__col1__title {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tabata__page__PC__editTabata__col1__title__fa__return {
+    position: absolute;
+    height: 27px;
+    width: auto;
+    left: -30px;
+    cursor: default;
+}
+
+.tabata__page__PC__editTabata__col1__title__edit {
+    display: flex;
+    width: fit-content;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabata__page__PC__editTabata__col1__title h2 {
+    font-size: 23px;
+    font-weight: 400;
+    height: 30px;
+    align-items: center;
+    min-width: 150px;
+    width: fit-content;
+    max-width: 200px;
+    overflow: auto;
+}
+
+.tabata__page__PC__editTabata__col1__title ::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    cursor: pointer;
+}
+
+
+
+.tabata__page__PC__editTabata__col1__title input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.2em;
+    max-height: 30px;
+    height: 30px;
+    font-size: 19px;
+    max-width: 150px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__editTabata__col1__title__fa__pen {
+    height: 20px;
+    width: auto;
+}
+
+.tabata__page__PC__editTabata__col1__title__saved p {
+    font-size: 14px;
+    align-items: center;
+    font-weight: 300;
+    color: rgba(196, 52, 57, 0.9);
+    cursor: default;
+}
+
+.tabata__page__PC__editTabata__col1__timer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    gap: 15px;
+    max-height: 400px;
+    padding-right: 30px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.tabata__page__PC__editTabata__col1__timer__item {
+    display: flex;
+    width: 100%;
+    background: rgba(215, 215, 215, 0.5);
+    border-radius: 7px;
+    min-height: 70px;
+    max-height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.tabata__page__PC__editTabata__col1__timer__item h3 {
+    font-weight: 500;
+    font-size: 23px;
+
+}
+
+.tabata__page__PC__editTabata__col1__timer__item div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabata__page__PC__editTabata__col1__timer__item p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__editTabata__col1__timer__boxLayer {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 100%;
+    transition: 0.2s;
+    margin-right: 30px;
+
+}
+
+.tabata__page__PC__editTabata__col1__timer__layer {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    display: flex;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.7) 70%);
+}
+
+.tabata__page__PC__editTabata__col1__save {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5px;
+    margin-right: 30px;
+}
+
+.tabata__page__PC__editTabata__col1__save button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 23px;
+    background: rgba(196, 52, 57, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3em 1em;
+    border-radius: 10px;
+}
+
+.tabata__page__PC__editTabata__col2__workLayer {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(rgba(196, 52, 58, 1) 300deg, rgba(196, 52, 58, 0.3) 0deg);
+
+}
+
+.tabata__page__PC__editTabata__col2__workLayer__hide {
+    display: flex;
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.tabata__page__PC__editTabata__col2__restLayer {
+    position: relative;
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(rgba(196, 52, 58, 0.5) 300deg, rgba(196, 52, 58, 0.3) 0deg);
+
+
+}
+
+.tabata__page__PC__editTabata__col2__info {
+    display: flex;
+    width: 205px;
+    height: 205px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabata__page__PC__editTabata__col2__info h2 {
+    font-size: 50px;
+    color: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__PC__editTabata__col2__info p {
+    font-size: 19px;
+}
+
+.tabata__page__PC__editTabata__col2__info__points {
+    position: relative;
+    width: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabata__page__PC__editTabata__col2__info__minutes {
+    position: absolute;
+    right: 30px;
+    top: 0;
+}
+
+.tabata__page__PC__editTabata__col2__info__seconds {
+    position: absolute;
+    left: 30px;
+    top: 0;
+
+}
+
+.tabata__page__PC__editTabata__col2__legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+    width: 100%;
+}
+
+.tabata__page__PC__editTabata__col2__legend p {
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__editTabata__col2__legend__work,
+.tabata__page__PC__editTabata__col2__legend__rest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.tabata__page__PC__editTabata__col2__legend__work__square {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(196, 52, 57, 0.9);
+    border-radius: 4px;
+}
+
+.tabata__page__PC__editTabata__col2__legend__rest__square {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(196, 52, 57, 0.6);
+    border-radius: 4px;
+}
+
+.tabata__page__PC__editTabata__col2__play {
+    margin-top: 30px;
+}
+
+.tabata__page__PC__editTabata__col2__play button {
+    font-size: 25px;
+    background: rgba(196, 52, 57, 0.9);
+    padding: 0.35em 2em;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+
+.tabata__page__PC__editTabata__col2__playlist {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__mobile__editTabata__col2__playlist button {}
+
+.tabata__page__PC__editTabata__col2__playlist img {
+    height: 13px;
+    width: auto;
+    transform: rotate(180deg);
+    margin-left: 5px;
+}
+
+.tabata__page__PC__editTabata__col2__playlist button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgba(196, 52, 57, 0.9);
+    font-weight: 500;
+    font-size: 14px;
+    /* background: rgba(215, 215, 215, 0.5); */
+    padding: 0.8em 1.5em;
+    font-weight: 400;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    white-space: nowrap;
+}
+
+.tabata__page__PC__allTabatas {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.tabata__page__PC__allTabatas__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tabata__page__PC__allTabatas__title h1 {
+    font-size: 23px;
+    font-weight: 400;
+    cursor: default;
+}
+
+.tabata__page__PC__allTabatas__title__chevronLeft {
+    position: absolute;
+    height: 27px;
+    width: auto;
+    left: -30px;
+    cursor: default;
+}
+
+.tabata__page__PC__allTabatas__tabatas__boxOverall {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.tabata__page__PC__allTabatas__tabatas {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+}
+
+.tabata__page__PC__allTabatas__tabatas__box {
+    display: flex;
+    gap: 10%;
+    width: 100%;
+    max-height: 400px;
+    position: absolute;
+    left: 0;
+    transition: 1s;
+}
+
+
+
+.tabata__page__PC__allTabatas__tabatas__chevronRight {
+    position: absolute;
+    right: -40px;
+    height: 50px;
+    width: auto;
+    transition: 0.2s ease-in;
+    opacity: 1
+}
+
+.tabata__page__PC__allTabatas__tabatas__chevronLeft {
+    position: absolute;
+    left: -20px;
+    height: 50px;
+    width: auto;
+    transform: rotate(180deg);
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.tabata__page__PC__allTabatas__tabata {
+    flex-basis: 45%;
+    min-width: 45%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabata__page__PC__allTabatas__tabata__title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+    height: 30px;
+}
+
+.tabata__page__PC__allTabatas__tabata__title h3 {
+    font-size: 27px;
+    font-weight: 400;
+    color: rgba(196, 52, 57, 0.9);
+
+    max-width: 350px;
+    overflow: auto;
+    max-height: 37px;
+
+
+}
+
+.tabata__page__PC__allTabatas__tabata__title__h3::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    cursor: pointer;
+}
+
+.tabata__page__PC__allTabatas__tabata__title__pen {
+    height: 20px;
+    width: auto;
+}
+
+.tabata__page__PC__allTabatas__tabata__title__bin {
+    height: 20px;
+    width: auto;
+}
+
+.tabata__page__PC__allTabatas__tabata__title__fas {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.tabata__page__PC__allTabatas__tabata__title input {
+    height: 30px;
+    width: 200px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-size: 23px;
+    padding-bottom: 5px;
+    min-width: fit-content;
+}
+
+
+
+
+
+.tabata__page__PC__allTabatas__tabata__box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+    height: 300px;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+.tabata__page__PC__allTabatas__tabata__box__item {
+    display: flex;
+    width: 100%;
+    background: rgba(215, 215, 215, 0.5);
+    border-radius: 7px;
+    min-height: 70px;
+    max-height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.tabata__page__PC__allTabatas__tabata__box h3 {
+    font-weight: 500;
+    font-size: 23px;
+
+}
+
+.tabata__page__PC__allTabatas__tabata__box div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabata__page__PC__allTabatas__tabata__box p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__allTabatas__tabata__button {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5px;
+    margin-right: 20px;
+}
+
+.tabata__page__PC__allTabatas__tabata__button button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 23px;
+    background: rgba(196, 52, 57, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3em 1em;
+    border-radius: 10px;
+}
+
+.tabata__page__PC__play {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    overflow: hidden;
+
+}
+
+.tabata__page__PC__play__fullScreenImage {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 40px;
+    width: auto;
+    z-index: 10;
+}
+
+.tabata__page__PC__play__box {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.tabata__page__PC__play__timer {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    border: none;
+    border-right: 3px solid rgba(215, 215, 215, 0.5);
+
+    /*   background: rgba(215, 215, 215, 0.2); */
+}
+
+
+
+
+.tabata__page__PC__play__timer__circle {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__PC__play__timer__circle__hide {
+    display: flex;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.tabata__page__PC__play__timer__circle__hide h2 {
+    font-size: 90px;
+    font-weight: 500;
+    color: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__PC__play__timer__circle__hide p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tabata__page__PC__play__timer__total {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.tabata__page__PC__play__timer__total h3 {
+    font-size: 40px;
+    font-weight: 300;
+    font-family: monospace;
+}
+
+.tabata__page__PC__play__timer__title {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__PC__play__timer__title h1 {
+    font-size: 60px;
+    font-weight: 500;
+    color: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__PC__play__timer__buttons {
+    display: flex;
+    margin-top: 50px;
+    background-color: rgba(215, 215, 215, 0.5);
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+}
+
+.tabata__page__PC__play__timer__buttons button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0.8em 1.5em;
+    font-weight: 300;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.tabata__page__PC__play__timer__buttons button:nth-child(1) {
+    color: white;
+    border-radius: 10px;
+    background: rgba(196, 52, 57, 0.9);
+}
+
+
+
+
+
+.tabata__page__PC__play__next {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.tabata__page__PC__play__next__tasksBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    /* Adjust the blur amount as needed */
+}
+
+#playBackgroundRight {
+    position: absolute;
+    width: 50%;
+    right: 0;
+
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.tabata__page__PC__play__next h2 {
+    font-size: 27px;
+    font-weight: 500;
+    width: 450px;
+    text-shadow: 0 0 10px white;
+
+}
+
+.tabata__page__PC__play__next__tasks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    width: 450px;
+}
+
+.tabata__page__PC__play__next__item {
+    display: flex;
+    width: 100%;
+    background: rgba(215, 215, 215, 0.5);
+    border-radius: 7px;
+    min-height: 70px;
+    max-height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.tabata__page__PC__play__next__item h3 {
+    font-weight: 500;
+    font-size: 23px;
+
+}
+
+.tabata__page__PC__play__next__item div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabata__page__PC__play__next__item p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__play__timer__audio {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+}
+
+.tabata__page__PC__play__timer__audio__music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 450px;
+}
+
+.tabata__page__PC__play__timer__audio__music img {
+    height: 130px;
+    border-radius: 2px;
+    width: auto;
+    margin-top: 20px;
+    box-shadow: 0 0 3px black;
+}
+
+.tabata__page__PC__play__timer__audio__music__title {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.tabata__page__PC__play__timer__audio__music__title h3 {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1em;
+
+}
+
+.tabata__page__PC__play__timer__audio__music__title p {
+    font-size: 13px;
+    font-weight: 400;
+    font-weight: 200;
+    margin-top: 2px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1em;
+
+}
+
+.tabata__page__PC__play__timer__audio__music__currentTime {
+    display: flex;
+    width: 200px;
+    max-width: 200px;
+    align-items: center;
+    position: relative;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+.tabata__page__PC__play__timer__audio__music__currentTime div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.tabata__page__PC__play__timer__audio__music__currentTime p {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__play__timer__audio__music__currentTime input {
+    width: 200px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 6px;
+    background: rgba(196, 52, 57, 0.4);
+}
+
+.tabata__page__PC__play__timer__audio__music__currentTime input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__PC__play__timer__audio__music__currentTime input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__PC__play__timer__audio__music__controls {
+    width: 130px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabata__page__PC__play__timer__audio__music__controls img {
+    height: 15px;
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.tabata__page__PC__play__timer__audio__loading {
+    display: flex;
+    height: 57px;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    display: inline;
+    margin-top: 2vh;
+    height: 30px;
+    width: 30px;
+    background: transparent;
+    border: red 3px solid;
+    border-top: transparent;
+    border-radius: 50%;
+    animation: animate81323 0.8s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes animate81323 {
+    0% {
+        border: 3px solid rgba(196, 52, 57, 0.9);
+        border-top: transparent;
+        border-left: transparent;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        border: 3px dashed rgba(196, 52, 57, 0.2);
+        border-top: transparent;
+        border-left: transparent;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        border: 3px dotted rgba(196, 52, 57, 0.9);
+        border-top: transparent;
+        border-left: transparent;
+        transform: rotate(360deg);
+    }
+}
+
+.tabata__page__PC__play__box__finish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tabata__page__PC__play__box__finish h2 {
+    font-size: 70px;
+    color: rgba(196, 52, 57, 0.9);
+    margin-bottom: 30px;
+}
+
+.tabata__page__PC__play__box__finish h3 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.tabata__page__PC__play__box__finish button {
+    margin-top: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(196, 52, 57, 0.9);
+    color: white;
+    padding: 0.4em 1.5em;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.tabata__page__PC__music {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.tabata__page__PC__music__col1 {
+    flex-basis: 55%;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.tabata__page__PC__music__col1__chevronLeft {
+    position: absolute;
+    left: -30px;
+    width: auto;
+    height: 27px;
+}
+
+.tabata__page__PC__music__col1__title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: fit-content;
+}
+
+.tabata__page__PC__music__col1__title h1 {
+    font-weight: 400;
+    font-size: 23px;
+}
+
+.tabata__page__PC__music__col1__title__buttons {
+    display: flex;
+    margin-top: 20px;
+    width: fit-content;
+    width: 220px;
+    height: 46px;
+    font-weight: 300;
+    border-radius: 8px;
+    background: rgba(215, 215, 215, 0.5);
+}
+
+/* 105px */
+.tabata__page__PC__music__col1__title__buttons button {
+    font-size: 16px;
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 110px;
+    height: 46px;
+    transition: 0.2s;
+}
+
+.tabata__page__PC__music__col1__title__buttons button:nth-child(3) {
+    left: 110px;
+}
+
+.tabata__page__PC__music__col1__title__buttons__layer {
+    height: 46px;
+    width: 110px;
+    position: absolute;
+    left: 110px;
+    background-color: rgba(196, 52, 57, 0.9);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.tabata__page__PC__music__col1__songs {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(215, 215, 215, 0.5);
+    border-radius: 20px;
+    height: 400px;
+}
+
+.tabata__page__PC__music__col1__songs h2 {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.tabata__page__PC__music__col1__songs__box {
+    margin: 0 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 20px;
+    max-height: 340px;
+    overflow: auto;
+}
+
+.tabata__page__PC__music__col1__songs__item {
+    display: flex;
+    width: 260px;
+    height: 250px;
+    min-width: 260px;
+    margin-bottom: 15px;
+    height: 60px;
+}
+
+.tabata__page__PC__music__col1__songs__item img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.tabata__page__PC__music__col1__songs__text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tabata__page__PC__music__col1__songs__text__col2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.tabata__page__PC__music__col1__songs__text__col2 img {
+    width: 22px;
+    height: auto;
+}
+
+.tabata__page__PC__music__col1__songs__text__col1 {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    margin-left: 10px;
+    gap: 2px;
+}
+
+.tabata__page__PC__music__col1__songs__text__col1 h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.tabata__page__PC__music__col1__songs__text__col1 p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__music__col2 {
+    flex-basis: 25%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.tabata__page__PC__music__col2__coverImages {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabata__page__PC__music__col2__coverImages__image {
+    background-color: rgba(215, 215, 215, 0.5);
+    width: 125px;
+    height: 125px;
+}
+
+.tabata__page__PC__music__col2__title {
+    margin-top: 20px;
+    gap: 30px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    position: relative;
+}
+
+.tabata__page__PC__music__col2__title__pen {
+    height: 20px;
+    width: auto;
+    position: absolute;
+    right: -35px;
+}
+
+.tabata__page__PC__music__col2__title h3 {
+    height: 30px;
+    font-size: 23px;
+    font-weight: 300;
+    color: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__PC__music__col2__title input {
+    height: 30px;
+    border: none;
+    padding-bottom: 0.1em;
+    font-size: 19px;
+    outline: none;
+    width: 200px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 270px;
+
+    align-items: center;
+    max-height: 140px;
+    overflow: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    gap: 15px;
+    width: 100%;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic__item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic__item__text {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7px;
+    align-items: center;
+    width: 100%;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic__item__text__col1 {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic__item__text__col1 h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic__item__text__col1 p {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.tabata__page__PC__music__col2__title__selectedMusic__item__text__col2 h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tabata__page__PC__music__col2__button {
+    margin-top: 30px;
+    background: rgba(196, 52, 57, 0.9);
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 19px;
+    padding: 0.4em 1.6em;
+    border-radius: 15px;
+}
+
+.tabata__page__PC__music__allMusic {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.tabata__page__PC__music__allMusic__edit {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.tabata__page__PC__music__allMusic__edit__fa {
+    height: 25px;
+    width: auto;
+}
+
+.tabata__page__PC__music__allMusic__playlists {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.tabata__page__PC__music__allMusic__playlists h3 {
+    font-size: 19px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tabata__page__PC__music__allMusic__playlist {
+    flex-basis: 45%;
+    background-color: rgba(215, 215, 215, 0.5);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.tabata__page__PC__music__allMusic__playlist__cover {
+    width: 100px;
+    height: 100px;
+    background-color: #BEBEBE;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+}
+
+.tabata__page__PC__music__allMusic__playlist__cover img {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.tabata__page__PC__music__allMusic__playlist__text {
+    display: flex;
+    padding-left: 20px;
+    width: 230px;
+    justify-content: center;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.tabata__page__PC__music__allMusic__playlist__text h2 {
+    max-width: 230px;
+    font-size: 25px;
+    font-weight: 500;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.tabata__page__PC__music__allMusic__playlist__text h2::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    cursor: pointer;
+}
+
+.tabata__page__PC__music__allMusic__playlist__text input {
+    height: 35px;
+    width: 200px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 7px;
+    font-size: 19px;
+}
+
+.tabata__page__PC__music__allMusic__playlist__text p {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.tabata__page__PC__music__allMusic__playlist__edit {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+.tabata__page__PC__music__allMusic__playlist .tabata__page__PC__music__allMusic__playlist__edit__play {
+    height: 70px;
+    width: auto;
+    margin-right: 30px;
+}
+
+.tabata__page__PC__music__allMusic__playlist .tabata__page__PC__music__allMusic__playlist__edit__play:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.tabata__page__PC__music__allMusic__playlist__edit img {
+    height: 40px;
+    width: auto;
+    margin-right: 30px;
+    user-select: none;
+}
+
+/* Mobile 
+
+
+
+
+
+
+
+*/
+.tabata__page__mobile {
+    display: flex;
+    top: 20vh;
+    color: black;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__mobile__row {
+    padding: 4vh 5vw;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    max-width: 1400px;
+    height: 100%;
+    position: relative;
+
+}
+
+.tabata__page__mobile h1 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.tabata__page__mobile__createTimer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+}
+
+.tabata__page__mobile__createTimer__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+.tabata__page__mobile__createTimer__col1 {
+    height: 450px;
+    flex-basis: 45%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    gap: 25px;
+}
+
+
+.tabata__page__mobile__createTimer__box h3 {
+    font-size: 23px;
+    font-weight: 400;
+    font-family: 'Lexend';
+    margin-bottom: 10px;
+}
+
+
+
+.tabata__page__mobile__createTimer__col1__prepare input,
+.tabata__page__mobile__createTimer__col1__work input,
+.tabata__page__mobile__createTimer__col1__rest input,
+.tabata__page__mobile__createTimer__col1__cycles input,
+.tabata__page__mobile__createTimer__col1__restSets input,
+.tabata__page__mobile__createTimer__col1__cooldown input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 10px;
+    background: rgba(196, 52, 57, 0.4);
+
+}
+
+.tabata__page__mobile__createTimer__col1__prepare input::-webkit-slider-thumb,
+.tabata__page__mobile__createTimer__col1__work input::-webkit-slider-thumb,
+.tabata__page__mobile__createTimer__col1__rest input::-webkit-slider-thumb,
+.tabata__page__mobile__createTimer__col1__cycles input::-webkit-slider-thumb,
+.tabata__page__mobile__createTimer__col1__restSets input::-webkit-slider-thumb,
+.tabata__page__mobile__createTimer__col1__cooldown input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare input::-moz-range-thumb,
+.tabata__page__mobile__createTimer__col1__work input::-moz-range-thumb,
+.tabata__page__mobile__createTimer__col1__rest input::-moz-range-thumb,
+.tabata__page__mobile__createTimer__col1__cycles input::-moz-range-thumb,
+.tabata__page__mobile__createTimer__col1__restSets input::-moz-range-thumb,
+.tabata__page__mobile__createTimer__col1__cooldown input::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__info,
+.tabata__page__mobile__createTimer__col1__work__info,
+.tabata__page__mobile__createTimer__col1__rest__info,
+.tabata__page__mobile__createTimer__col1__cycles__info,
+.tabata__page__mobile__createTimer__col1__restSets__info,
+.tabata__page__mobile__createTimer__col1__cooldown__info {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__timeSwitch,
+.tabata__page__mobile__createTimer__col1__work__timeSwitch,
+.tabata__page__mobile__createTimer__col1__rest__timeSwitch,
+.tabata__page__mobile__createTimer__col1__restSets__timeSwitch,
+.tabata__page__mobile__createTimer__col1__cooldown__timeSwitch {
+    width: 90px;
+    position: relative;
+    background: rgba(215, 215, 215, 0.5);
+    height: fit-content;
+    border-radius: 10px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__timeSwitch button,
+.tabata__page__mobile__createTimer__col1__work__timeSwitch button,
+.tabata__page__mobile__createTimer__col1__rest__timeSwitch button,
+.tabata__page__mobile__createTimer__col1__restSets__timeSwitch button,
+.tabata__page__mobile__createTimer__col1__cooldown__timeSwitch button {
+    width: 45px;
+    min-width: 45px;
+    max-width: 45px;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    height: 25px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    color: black;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__timeSwitch button:nth-child(2),
+.tabata__page__mobile__createTimer__col1__work__timeSwitch button:nth-child(2),
+.tabata__page__mobile__createTimer__col1__rest__timeSwitch button:nth-child(2),
+.tabata__page__mobile__createTimer__col1__restSets__timeSwitch button:nth-child(2),
+.tabata__page__mobile__createTimer__col1__cooldown__timeSwitch button:nth-child(2) {
+    left: 45px;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__info__layer,
+.tabata__page__mobile__createTimer__col1__work__info__layer,
+.tabata__page__mobile__createTimer__col1__rest__info__layer,
+.tabata__page__mobile__createTimer__col1__restSets__info__layer,
+.tabata__page__mobile__createTimer__col1__cooldown__info__layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45px;
+    background-color: rgb(196, 52, 58, 0.9);
+    height: 25px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__timeSwitch__selected,
+.tabata__page__mobile__createTimer__col1__work__timeSwitch__selected,
+.tabata__page__mobile__createTimer__col1__rest__timeSwitch__selected,
+.tabata__page__mobile__createTimer__col1__restSets__timeSwitch__selected,
+.tabata__page__mobile__createTimer__col1__cooldown__timeSwitch__selected {
+    color: white !important;
+    transition: 0.2s;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__value,
+.tabata__page__mobile__createTimer__col1__work__value,
+.tabata__page__mobile__createTimer__col1__rest__value,
+.tabata__page__mobile__createTimer__col1__cycles__value,
+.tabata__page__mobile__createTimer__col1__restSets__value,
+.tabata__page__mobile__createTimer__col1__cooldown__value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    justify-content: space-between;
+}
+
+.tabata__page__mobile__createTimer__col1__cycles__value {
+    width: 90px;
+}
+
+.tabata__page__mobile__createTimer__col1__prepare__value input,
+.tabata__page__mobile__createTimer__col1__work__value input,
+.tabata__page__mobile__createTimer__col1__rest__value input,
+.tabata__page__mobile__createTimer__col1__cycles__value input,
+.tabata__page__mobile__createTimer__col1__restSets__value input,
+.tabata__page__mobile__createTimer__col1__cooldown__value input {
+    width: 25px;
+    text-align: center;
+    height: 25px;
+    font-size: 16px;
+    border-radius: none;
+    outline: none;
+    border: none;
+    background: rgba(196, 52, 57, 0.9);
+    color: white;
+    font-weight: 300;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.tabata__page__mobile__createTimer__col2__buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 10px;
+
+}
+
+.tabata__page__mobile__createTimer__col2__buttons__box {
+    display: flex;
+    width: fit-content;
+    position: relative;
+    background-color: rgba(215, 215, 215, 0.5);
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    height: fit-content;
+}
+
+.tabata__page__mobile__createTimer__col2__buttons__box button {
+    border: none;
+    outline: none;
+    padding: 0.7em 1.5em;
+    background: none;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 300;
+    color: black;
+}
+
+
+
+#tabata__page__mobile__createTimer__col2__buttons__box__continue {
+    background-color: rgba(196, 52, 57, 0.9);
+    border-radius: 7px;
+    color: white;
+    font-weight: 500;
+}
+
+.tabata__page__mobile__editTabata {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px;
+    flex-direction: column;
+    position: relative;
+
+}
+
+.tabata__page__mobile__editTabata__title {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    align-items: center;
+}
+
+.tabata__page__mobile__editTabata__title__return {
+    height: 27px;
+    width: auto;
+}
+
+
+.tabata__page__mobile__editTabata__title__edit {
+    display: flex;
+    width: fit-content;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabata__page__mobile__editTabata__title__edit h2,
+.tabata__page__mobile__editTabata__title h2 {
+    font-size: 23px;
+    font-weight: 400;
+    height: 30px;
+    align-items: center;
+    width: fit-content;
+    max-width: 270px;
+    overflow: auto;
+}
+
+.tabata__page__mobile__editTabata__title__edit ::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    cursor: pointer;
+}
+
+
+.tabata__page__mobile__editTabata__title__edit__input {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.tabata__page__mobile__editTabata__title__edit input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.2em;
+    border-radius: none;
+    border: none;
+    max-height: 30px;
+    height: 29px;
+    font-size: 19px;
+    max-width: 150px;
+    font-weight: 300;
+    background: transparent;
+}
+
+.tabata__page__mobile__editTabata__title__pen {
+    height: 20px;
+    width: auto;
+}
+
+.tabata__page__mobile__editTabata__timer__box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+
+}
+
+.tabata__page__mobile__editTabata__timer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    gap: 15px;
+
+    max-height: 350px;
+    overflow-y: auto;
+    position: relative;
+    padding-right: 5px;
+}
+
+.tabata__page__mobile__editTabata__timer__item {
+    display: flex;
+    width: 100%;
+    background: rgba(215, 215, 215, 0.5);
+    border-radius: 7px;
+    min-height: 60px;
+    max-height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.tabata__page__mobile__editTabata__timer__item h3 {
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+.tabata__page__mobile__editTabata__timer__item div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabata__page__mobile__editTabata__timer__item p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.tabata__page__mobile__editTabata__timer__boxLayer {
+    position: relative;
+    height: 1px;
+    display: flex;
+    width: 100%;
+    transition: 0.2s;
+    margin-right: 30px;
+
+}
+
+.tabata__page__mobile__editTabata__timer__boxLayer {
+
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    display: flex;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.7) 70%);
+
+}
+
+
+
+
+
+.tabata__page__mobile__editTabata__save {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5px;
+
+    margin-right: 10px;
+
+}
+
+.tabata__page__mobile__editTabata__save__buttons {
+    display: flex;
+    background: rgba(215, 215, 215, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.tabata__page__mobile__editTabata__save button {
+
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: rgba(196, 52, 57, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7em 1.7em;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+#tabata__page__mobile__editTabata__save__buttons__save {
+    background: transparent;
+    color: black;
+    font-weight: 300;
+}
+
+
+
+.tabata__page__mobile__editTabata__col2__workLayer {
+
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(rgba(196, 52, 58, 1) 0deg, rgba(196, 52, 58, 0.3) 0deg);
+
+}
+
+
+
+
+.tabata__page__mobile__editTabata__col2__workLayer__hide {
+    display: flex;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.tabata__page__mobile__editTabata__col2__restLayer {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(rgba(196, 52, 58, 0.5) 0deg, rgba(196, 52, 58, 0.3) 0deg);
+
+
+}
+
+.tabata__page__mobile__editTabata__col2__info {
+    display: flex;
+    width: 190px;
+    height: 190px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabata__page__mobile__editTabata__col2__info h2 {
+    font-size: 50px;
+    color: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__mobile__editTabata__col2__info p {
+    font-size: 19px;
+}
+
+.tabata__page__mobile__editTabata__col2__info__points {
+    position: relative;
+    width: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabata__page__mobile__editTabata__col2__info__minutes {
+    position: absolute;
+    right: 30px;
+    top: 0;
+}
+
+.tabata__page__mobile__editTabata__col2__info__seconds {
+    position: absolute;
+    left: 30px;
+    top: 0;
+
+}
+
+.tabata__page__mobile__editTabata__col2__legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.tabata__page__mobile__editTabata__col2__legend p {
+    font-weight: 400;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.tabata__page__mobile__editTabata__col2__legend__work,
+.tabata__page__mobile__editTabata__col2__legend__rest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.tabata__page__mobile__editTabata__col2__legend__work__square {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(196, 52, 57, 0.9);
+    border-radius: 4px;
+}
+
+.tabata__page__mobile__editTabata__col2__legend__rest__square {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(196, 52, 57, 0.6);
+    border-radius: 4px;
+}
+
+.tabata__page__mobile__editTabata__col2__play {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__mobile__editTabata__col2__play button {
+    font-size: 25px;
+    background: rgba(196, 52, 57, 0.9);
+    padding: 0.45em 2.2em;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.tabata__page__mobile__editTabata__col2__playlist {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tabata__page__mobile__editTabata__col2__playlist button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgba(196, 52, 57, 0.9);
+    font-weight: 500;
+    font-size: 14px;
+    /* background: rgba(215, 215, 215, 0.5); */
+    padding: 0.8em 1.5em;
+    font-weight: 400;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    white-space: nowrap;
+}
+
+.tabata__page__mobile__editTabata__col2__playlist__chevron {
+    height: 13px;
+    width: auto;
+    transform: rotate(180deg);
+    margin-left: 5px;
+}
+
+.tabata__page__mobile__allTabatas {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px;
+    flex-direction: column;
+    position: relative;
+
+}
+
+
+.tabata__page__mobile__allTabatas__title {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    align-items: center;
+}
+
+.tabata__page__mobile__allTabatas__title h2 {
+    font-size: 23px;
+    font-weight: 400;
+    height: 30px;
+}
+
+.tabata__page__mobile__allTabatas__title__return {
+    height: 27px;
+    width: auto;
+}
+
+.tabata__page__mobile__allTabatas__all {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.tabata__page__mobile__allTabatas__item {
+    display: flex;
+    background-color: rgba(215, 215, 215, 0.5);
+    border-radius: 10px;
+    height: 50px;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    max-width: 350px;
+    justify-content: space-between;
+}
+
+
+
+.tabata__page__mobile__allTabatas__item h2 {
+    font-size: 19px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.tabata__page__mobile__allTabatas__item__border {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.tabata__page__mobile__allTabatas__item input {
+    background: transparent;
+    border: none;
+    outline: none;
+    height: 30px;
+    font-size: 19px;
+}
+
+.tabata__page__mobile__allTabatas__item__edit {
+    display: flex;
+    gap: 20px;
+}
+
+.tabata__page__mobile__allTabatas__item__edit__image {
+    height: 19px;
+    width: auto;
+
+}
+
+.tabata__page__mobile__allTabatas__choose {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    background: rgba(215, 215, 215, 0.5);
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabata__page__mobile__allTabatas__choose button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: rgba(196, 52, 57, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7em 1.5em;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.tabata__page__mobile__allTabatas__item__select {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(196, 52, 57, 0.9);
+    border-radius: 50%;
+}
+
+#tabata__page__mobile__allTabatas__choose__cancel {
+    background: transparent;
+    color: black;
+    font-weight: 300;
+
+}
+
+.tabata__page__mobile__musicTabata {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px;
+    flex-direction: column;
+    position: relative;
+}
+
+.tabata__page__mobile__musicTabata__title {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    align-items: center;
+}
+
+.tabata__page__mobile__musicTabata__title h2 {
+    font-size: 23px;
+    font-weight: 400;
+    height: 30px;
+}
+
+.tabata__page__mobile__musicTabata__title__chevron {
+    height: 27px;
+    width: auto;
+}
+
+
+.tabata__page__mobile__musicTabata__buttons {
+    display: flex;
+    margin-top: 20px;
+    width: fit-content;
+    background-color: rgba(215, 215, 215, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    height: 40px;
+
+}
+
+.tabata__page__mobile__musicTabata__buttons button {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    position: absolute;
+    left: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 300;
+    z-index: 1;
+    transition: 0.2s;
+}
+
+.tabata__page__mobile__musicTabata__buttons button:nth-child(1) {
+    left: 0;
+}
+
+.tabata__page__mobile__musicTabata__buttons__layer {
+    width: 100px;
+    height: 40px;
+    background: rgba(196, 52, 57, 0.9);
+    left: 0;
+    position: absolute;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.tabata__page__mobile__musicTabata__create {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabata__page__mobile__musicTabata__create__cover {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tabata__page__mobile__musicTabata__create__cover__image {
+    width: 60px;
+    height: 60px;
+    background: rgba(215, 215, 215, 0.5);
+}
+
+
+.tabata__page__mobile__musicTabata__create__title {
+    margin-top: 20px;
+    gap: 30px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    position: relative;
+
+
+}
+
+.tabata__page__mobile__musicTabata__create__title__pen {
+    height: 20px;
+    width: auto;
+    position: absolute;
+    right: -35px;
+}
+
+.tabata__page__mobile__musicTabata__create__title h3 {
+    height: 30px;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    color: rgba(196, 52, 57, 0.9);
+    overflow: hidden;
+    overflow-y: auto;
+    max-width: 70vw;
+}
+
+.tabata__page__mobile__musicTabata__create__title input {
+    height: 30px;
+    border: none;
+    padding-bottom: 0.1em;
+    font-size: 19px;
+    outline: none;
+    width: 200px;
+
+    text-align: center;
+}
+
+
+
+.tabata__page__mobile__musicTabata__create__select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__mobile__musicTabata__create__select p {
+    font-weight: 400;
+    color: rgba(196, 52, 57, 0.9);
+    font-size: 16px;
+}
+
+.tabata__page__mobile__musicTabata__create__save {
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgba(196, 52, 57, 0.9);
+    color: white;
+    padding: 0.7em 1.7em;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs {
+    display: flex;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+
+
+.tabata__page__mobile__musicTabata__create__allSongs__item {
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+    height: 60px;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs__item img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs__item__text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs__item__col2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs__item__col2 img {
+    width: 22px;
+    height: auto;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs__item__col1 {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    margin-left: 10px;
+    gap: 2px;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs__item__col1 h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.tabata__page__mobile__musicTabata__create__allSongs__item__col1 p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.tabata__page__mobile__musicTabata__create__buttons {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.tabata__page__mobile__musicTabata__create__buttons button {
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgba(196, 52, 57, 0.9);
+    color: white;
+    padding: 0.7em 1.7em;
+    font-weight: 500;
+    outline: none;
+    border: none;
+}
+
+.tabata__page__mobile__musicTabata__create__buttons button:nth-child(1) {
+    background-color: rgba(215, 215, 215, 0.5);
+    color: black;
+}
+
+
+.tabata__page__mobile__musicTabata__create__selectedSongs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 270px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.tabata__page__mobile__musicTabata__create__selectedSongs img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.tabata__page__mobile__musicTabata__create__selectedSongs__item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+
+.tabata__page__mobile__musicTabata__create__selectedSongs__text {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7px;
+    align-items: center;
+    width: 100%;
+}
+
+.tabata__page__mobile__musicTabata__create__selectedSongs__col1 {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.tabata__page__mobile__musicTabata__create__selectedSongs__col1 h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tabata__page__mobile__musicTabata__create__selectedSongs__col1 p {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.tabata__page__mobile__musicTabata__create__selectedSongs__col2 h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
+.tabata__page__mobile__musicTabata__playlists {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.tabata__page__mobile__musicTabata__playlists__fa {
+    height: 25px;
+    width: auto;
+    margin-top: 20px;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.tabata__page__mobile__musicTabata__playlists__box h3 {
+    font-size: 19px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item {
+    background-color: rgba(215, 215, 215, 0.5);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 70px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__cover {
+    width: 70px;
+    height: 70px;
+    background-color: #BEBEBE;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__cover img {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__text {
+    display: flex;
+    padding-left: 20px;
+    width: 230px;
+    justify-content: center;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__text h2 {
+    max-width: 230px;
+    font-size: 25px;
+    font-weight: 500;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__text h2::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    cursor: pointer;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__text input {
+    height: 35px;
+    width: 200px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 7px;
+    font-size: 19px;
+}
+
+.tabata__page__PC__music__allMusic__playlist__text p {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__edit {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item .tabata__page__PC__music__allMusic__playlist__edit__play {
+    height: 50px;
+    width: auto;
+    margin-right: 30px;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item .tabata__page__PC__music__allMusic__playlist__edit__play:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.tabata__page__mobile__musicTabata__playlists__box__item__edit img {
+    height: 30px;
+    width: auto;
+    margin-right: 30px;
+    user-select: none;
+}
+
+
+.tabata__page__mobile__play {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    overflow: hidden;
+
+}
+
+.tabata__page__mobile__play__fullScreenImage {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 40px;
+    width: auto;
+    z-index: 10;
+}
+
+.tabata__page__mobile__play__box {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+
+
+
+.tabata__page__mobile__play__timer {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    border: none;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+    min-height: 650px;
+    max-height: 650px;
+    height: 650px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.tabata__page__mobile__play__timer__box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.tabata__page__mobile__play__timer__circle {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    min-height: 270px;
+    min-width: 270px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__mobile__play__timer__circle__hide {
+    display: flex;
+    width: 210px;
+    height: 210px;
+    min-height: 210px;
+    min-width: 210px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.tabata__page__mobile__play__timer__circle__hide h2 {
+    font-size: 90px;
+    font-weight: 500;
+    color: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__mobile__play__timer__circle__hide p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tabata__page__mobile__play__timer__total {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+
+.tabata__page__mobile__play__timer__total h3 {
+    font-size: 40px;
+    font-weight: 300;
+    font-family: monospace;
+}
+
+.tabata__page__mobile__play__timer__title {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabata__page__mobile__play__timer__title h1 {
+    font-size: 55px;
+    font-weight: 500;
+    color: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__mobile__play__timer__buttons {
+    display: flex;
+    margin-top: 30px;
+    background-color: rgba(215, 215, 215, 0.5);
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+}
+
+.tabata__page__mobile__play__timer__buttons button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0.8em 1.5em;
+    font-weight: 300;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: black;
+
+}
+
+.tabata__page__mobile__play__timer__buttons button:nth-child(1) {
+    color: white;
+    border-radius: 10px;
+    background: rgba(196, 52, 57, 0.9);
+}
+
+.tabata__page__mobile__play__switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.tabata__page__mobile__play__switch__circle {
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    min-height: 27px;
+    border: 2px solid rgba(20, 20, 20, 0.95);
+    ;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tabata__page__mobile__play__switch__circle__selected {
+    border: none;
+    background-color:
+        rgba(20, 20, 20, 0.95);
+}
+
+
+
+.tabata__page__mobile__play__music {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: space-between;
+
+    min-height: 650px;
+    max-height: 650px;
+    height: 650px;
+    z-index: 10;
+}
+
+#tabata__page__mobile__play__music__background {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 0px;
+    z-index: 0;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.tabata__page__mobile__play__music__box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    width: 90vw;
+    max-width: 400px;
+    align-items: center;
+}
+
+.tabata__page__mobile__play__music__box h2 {
+    text-align: left;
+    display: flex;
+    font-weight: 400;
+    width: 100%;
+}
+
+.tabata__page__mobile__play__music__box__music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabata__page__mobile__play__music__box__music img {
+    height: 100px;
+    border-radius: 2px;
+    width: auto;
+    margin-top: 15px;
+    box-shadow: 0 0 3px black;
+}
+
+.tabata__page__mobile__play__music__box__music__title {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.tabata__page__mobile__play__music__box__music__title h3 {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1em;
+
+}
+
+.tabata__page__mobile__play__music__box__music__title p {
+    font-size: 13px;
+    font-weight: 400;
+    font-weight: 200;
+    margin-top: 2px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1em;
+
+}
+
+.tabata__page__mobile__play__music__box__music__currentTime {
+    display: flex;
+    width: 200px;
+    max-width: 200px;
+    align-items: center;
+    position: relative;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+.tabata__page__mobile__play__music__box__music__currentTime div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.tabata__page__mobile__play__music__box__music__currentTime p {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.tabata__page__mobile__play__music__box__music__currentTime input {
+    width: 200px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 6px;
+    background: rgba(196, 52, 57, 0.4);
+}
+
+.tabata__page__mobile__play__music__box__music__currentTime input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__mobile__play__music__box__music__currentTime input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #C4343A;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.tabata__page__mobile__play__music__box__music__controls {
+    width: 180px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabata__page__mobile__play__music__box__music__controls img {
+    height: 20px;
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.tabata__page__mobile__play__music__box__music__loading {
+    display: flex;
+    height: 57px;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    display: inline;
+    margin-top: 2vh;
+    height: 30px;
+    width: 30px;
+    background: transparent;
+    border: red 3px solid;
+    border-top: transparent;
+    border-radius: 50%;
+    animation: animate81323 0.8s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes animate81323 {
+    0% {
+        border: 3px solid rgba(196, 52, 57, 0.9);
+        border-top: transparent;
+        border-left: transparent;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        border: 3px dashed rgba(196, 52, 57, 0.2);
+        border-top: transparent;
+        border-left: transparent;
+        transform: rotate(270deg);
+    }
+
+    100% {
+        border: 3px dotted rgba(196, 52, 57, 0.9);
+        border-top: transparent;
+        border-left: transparent;
+        transform: rotate(360deg);
+    }
+}
+
+.tabata__page__mobile__play__music__next {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    width: 90vw;
+    max-width: 400px;
+    /* Adjust the blur amount as needed */
+}
+
+
+.tabata__page__mobile__play__music__next h2 {
+    text-align: left;
+    display: flex;
+    font-weight: 400;
+    width: 100%;
+
+}
+
+.tabata__page__mobile__play__music__next__tasks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 10px;
+    width: 100%;
+}
+
+.tabata__page__mobile__play__music__next__tasks__item {
+    display: flex;
+    width: 100%;
+    background: rgba(215, 215, 215, 0.5);
+    border-radius: 7px;
+    min-height: 60px;
+    max-height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.tabata__page__mobile__play__music__next__tasks__item h3 {
+    font-weight: 500;
+    font-size: 21px;
+
+}
+
+.tabata__page__mobile__play__music__next__tasks__item div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabata__page__mobile__play__music__next__tasks__item p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+
+.tabata__page__mobile__play__finish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+.tabata__page__mobile__play__finish h2 {
+    font-size: 48px;
+    text-align: center;
+    color: rgba(196, 52, 57, 0.9);
+    margin-bottom: 30px;
+    font-weight: 800;
+
+}
+
+.tabata__page__mobile__play__finish h3 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.tabata__page__mobile__play__finish button {
+    margin-top: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: rgba(196, 52, 57, 0.9);
+    color: white;
+    padding: 0.4em 1.5em;
+    border-radius: 7px;
+    text-align: center;
+}
+
+/* Logic 
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+@media screen and (min-width: 1000px) {
+
+    .tabata__page__PC {
+        display: flex;
+        top: 20vh;
+        color: black;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tabata__page__mobile {
+        display: none;
+    }
+
+}

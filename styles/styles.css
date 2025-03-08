@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/*  || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 20px;
+}
+
+/* --------Variables---------- */
+:root {
+    --BODY-FF: "Lexend", sans-serif;
+    --BLUE: #2696e9;
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+/* || GENERAL STYLING */
+.body {
+    background: white;
+    color: white;
+    font-family: "Lexend", sans-serif;
+    position: relative;
+    color: white;
+}
+
+/* ----Navbar------- */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6vh 5vw;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    transition: 1s;
+    top: 0;
+}
+
+.nav__image {
+    cursor: pointer;
+    z-index: 1;
+}
+
+.nav__image img {
+    height: 100%;
+    max-width: 15vw;
+    cursor: pointer;
+}
+
+.nav__list {
+    padding: 6vh 5vw;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.nav .nav__list li {
+    display: flex;
+    list-style: none;
+    font-size: clamp(14px, 1.5vw, 18px);
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 3vw;
+    height: 105%;
+}
+
+.nav__list__li__title {
+    cursor: pointer;
+}
+
+.nav ul li .fa {
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+}
+
+.nav-user {
+    display: flex;
+}
+
+.nav-user .fa {
+    width: 1em;
+    height: 1em;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.nav-user .fa:not(:last-child) {
+    margin-right: 1.8em;
+}
+
+.nav__list__sub {
+    top: calc(6vh + 45px);
+    padding: 12vh 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: 1;
+    left: -100vw;
+    transition: 1s;
+    opacity: 0;
+}
+
+.nav__list__sub__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__list__sub h2 {
+    font-weight: 300;
+    font-size: clamp(14px, 1.5vw, 18px);
+    margin-bottom: 3vh;
+    cursor: pointer;
+}
+
+.nav__list__sub p {
+    font-weight: 300;
+    color: gray;
+    cursor: pointer;
+}
+
+.nav__list__sub p:not(:last-child) {
+    margin-bottom: 1vh;
+}
+
+.nav__list__li:hover {
+    background-color: white;
+    color: black;
+}
+
+.nav__list__li:hover .nav__list__sub {
+    opacity: 1;
+    left: 0;
+    color: black;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.nav__list__sub__p {
+    /* Styles for the sub-menu items */
+    margin: 0;
+    padding: 5px;
+}
+
+.faBars {
+    display: none;
+}
+
+.nav__mobile {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    background-color: white;
+    height: 100vh;
+    color: black;
+    z-index: 999;
+    transition: 2s;
+    padding: 60px 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.nav__mobile .fa {
+    width: 20px;
+    height: 20px;
+}
+
+.nav__mobile__close {
+    top: 0;
+    left: right;
+    padding-right: 40px;
+    position: absolute;
+    background-color: white;
+    width: 300px;
+    height: 60px;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav__mobile__image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.nav__mobile__image img {
+    max-height: 20vh;
+    width: auto;
+}
+
+.nav__mobile__box {
+    margin-top: 20px;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.nav__mobile__box__title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav__mobile__box__title h1 {
+    font-weight: 500;
+}
+
+.nav__mobile__box__title .fa {
+    width: 15px;
+}
+
+.nav__mobile__sub {
+    margin-top: 6vh;
+}
+
+.nav__mobile__sub__box {
+    margin-bottom: 4vh;
+}
+
+.nav__mobile__sub__box h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav__mobile__sub__box p {
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 1vh;
+}
+
+.nav__mobile__footer {
+    margin-top: 4vh;
+    display: flex;
+    gap: 5%;
+}
+
+.nav__mobile__footer img {
+    height: 20px;
+    width: auto;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__list {
+        display: none;
+    }
+
+    .nav__image img {
+        min-width: 70px;
+        height: auto;
+    }
+
+    .faBars {
+        display: block;
+    }
+
+    .nav-user .fa {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ----Home Page--- */
+.home__slides {
+    background: white;
+    color: white;
+    font-family: var(--BODY-FF);
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    position: relative;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.home__slide {
+}
+
+#video1,
+#video2,
+#video3,
+#video4,
+#video5 {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: 1s;
+}
+
+.home__slide video {
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    left: 0vw;
+    opacity: 1;
+}
+
+.home__slide__pc {
+    opacity: 0;
+}
+
+.home__slide img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.home__slides__switch {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.home__slides__switch div {
+    box-shadow: 0 0 3px white;
+    z-index: 10;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+}
+
+.home__slides__switch div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.home__slides__switch .playing {
+    background-color: white;
+}
+
+.home__slide__text {
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 5vw;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Text Home slides */
+.home__slide__text h1 {
+    font-size: clamp(50px, 4vw, 80px);
+    font-weight: 900;
+    line-height: clamp(58px, 4.5vw, 90px);
+    letter-spacing: -0.05em;
+    text-shadow: 10px 10px 20px black;
+}
+
+.home__slide__text p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(17px, 2vw, 25px);
+    line-height: clamp(20px, 2vw, 35px);
+    letter-spacing: 0.051em;
+    font-weight: 100;
+    margin-top: 1em;
+    width: max(340px, 50vw);
+    text-shadow: 5px 5px 10px black;
+}
+
+.home__slide__text button {
+    font-weight: 500;
+    font-size: clamp(15px, 2vw, 23px);
+    width: fit-content;
+    padding: 0.5em 2em;
+    margin-top: 4vh;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    box-shadow: 0 0 10px white;
+}
+
+.home__slide__text button:hover {
+    /*   background: rgba(255, 255, 255, 0.95); */
+    background-color: white;
+    color: black;
+    text-shadow: 10px 10px 20px white;
+}
+
+.home__page2 {
+    height: 100vh;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container a {
+    font-size: 25px;
+}

@@ -1,0 +1,46 @@
+{
+    "allMusic": [
+        {
+            "title": "Lemon Tree",
+            "artist": "Fools Garden",
+            "imageLink": "lemonTreeCover",
+            "duration": "3:11",
+            "music": "lemonTreeMusic"
+        },
+        {
+            "title": "Victory",
+            "artist": "2 Steps from Hell",
+            "imageLink": "victoryCover",
+            "duration": "5:29",
+            "music": "victoryMusic"
+        },
+        {
+            "title": "Face Off",
+            "artist": "Tech N9ne",
+            "imageLink": "faceOffCover",
+            "duration": "4:22",
+            "music": "faceOffMusic"
+        },
+        {
+            "title": "Hips Don't Lie",
+            "artist": "TShakira, Wyclef Jean",
+            "imageLink": "hipsCover",
+            "duration": "3:38",
+            "music": "hipsMusic"
+        },
+        {
+            "title": "Can You Hear The Music",
+            "artist": "Ludwig Göransson",
+            "imageLink": "canYouHearMusicCover",
+            "duration": "1:50",
+            "music": "canYouHearMusicMusic"
+        },
+        {
+            "title": "Ton Combat",
+            "artist": "Arcadian",
+            "imageLink": "tonCombatCover",
+            "duration": "2:55",
+            "music": "tonCombatMusic"
+        }
+    ]
+}
